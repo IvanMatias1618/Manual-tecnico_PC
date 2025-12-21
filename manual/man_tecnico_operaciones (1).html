@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title> Manual Tecnico de operaciones </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!-- Deberia de haber un menu dinamico para llegar rapido a la consulta sin leer todo el man.  -->
+<section id="introduccion">
+<h2> Introduccion </h2>
+
+
+<p>Esta ligera documentacion pretende guiar a cualquier persona con procedimientos segun la situacion comun (incluso eventos mas esporadicos) presentada. </p>
+
+
+<h3> Areas: </h3> 
+<ul> 
+    <!-- Aqui luego ca li seria un mi ul que sea desplegable quiza con un checbox.-->
+<li> Audio y video </li>
+<li><a href="#saldos">Saldos</a> (tarjetas en 0) </li>
+<li> 
+
+<details>
+<summary> <a href="#ebox">E-BOX</a></summary>
+<ul> 
+<li> <a href="#centro">Err. Conexión centro.</a> </li>
+<li> <a href="#sas">Err. Conexión Sas.</a> </li>
+<li> <a href="#tarjetero">Err. Tarjetero.</a> </li>
+<li><a href="#tarjetaOcupada">Tarjeta de cliente bloqueada</a> </li>
+<li><a href="#reservado">Ebox reservado</a> </li>
+<li><a href="#menuEbox">Entrar al menu </a></li> 
+<li><a href="#calibrarDisplay">Calibrar Display</a> </li>
+<li><a href="#clonar">Clonar disco</a> </li>
+<li><a href="#configurarEbox">Configuracion del sistema.</a> </li>
+<li> <a href="#reiniciarEbox"> Reiniciar el Ebox </a> </li>
+</ul>
+</details> </li>
+
+
+
+<li> 
+<details> 
+<summary> Maquinas de juego </summary>
+<ul>
+<li> Zitro </li>
+<li> IGT </li>
+<li> AGS </li>
+<li> Ortiz </li>
+<li> EGT </li>
+</ul>
+</details>
+</li>
+
+
+
+<li> <a href="#toper">toper</a> </li>
+<li> letrero </li>
+<li> Botones </li>
+<li> monitores </li>
+<li> <a href="#scaner"> Scanners</a> </li> 
+<li> Impresoras </li>
+<li> Fallas de maquina </li>
+<li> Reportes a proveedor. (maquinas y servicios) </li>
+<li> Sorteos </li>
+</ul>
+</section>
+
+
+
+<section>
+    <h2 id="saldos"> Saldos. </h2>
+<details>
+
+    <summary> TARJETA EN 0. </summary>
+    <p> Aqui puede haber tres escenarios. \nO bien la maquina no libero el saldo. o el ebox no lo transfirio.
+        para saberlo veamos si en el juego aparecen los creditos del jugador, si esta en 0, seguramente sea por parte del ebox.
+    </p>
+
+    <p> * Se dan casos en los que el saldo del cliente se pierde. pero primero descartemos lo siguiente:</p>
+
+    <h3> Saldo no liberado por el juego:</h3>
+
+    <p> <a href=""> reinicia la maquina </a>. </p>
+
+    <h3> Saldo no linerado por Ebox.</h3>
+
+    <p> <a href="#reiniciarEbox"> reinicia el Ebox </a>.</p>
+
+    <h3> Saldo "perdido" </h3>
+
+    <p> En este caso puede ser un fallo de la maquina que necesita esperar a proveedor. o los dos pasos anteriores no dieron resultados (reintenta al menos dos veces) </p>
+
+    <p> En ambos escenarios se proceede con un <a href="">pago manual</a></p>
+
+</details>
+
+</section>
+
+
+<section>
+
+<h2 id="ebox"> Ebox </h2>
+
+<div>
+<details>
+<summary id="sas">Falla de conexion Sas</summary>
+<p> esta conexion se ubica en el puerto COM3 de los ebox y COM4 para los nano (ebox totalmente negro). \n
+verifiquemos que este bien conectado al ebox o si no esta dañado el cable. </p> 
+</details>
+</div>
+
+
+<div>
+<details>
+<summary id="centro">Err. Conexión centro.</summary>
+<p> Esta conexión es por medio del cable lan, asi que verifiquemos que este conectado, desconectemos y reconectemos. sino reiniciamos el ebox, y sino se tendra que evaluar las condiciones del cable o rastrear hasta el switch y reconectar ahi o cambiar el cable. </p> 
+</details></div>
+
+
+
+<div><details>
+<summary id="reservado"> Ebox reservado </summary>
+<p> Algunos clientes reservan la maquina, en este caso se quita reingresando la tarjeta que lo reservo. o esperando unos 15 minutos que es el tiempo que las reserva. </p>
+</details></div>
+
+
+
+<div><details>
+<summary id="menuEbox"> Entrar al menu del ebox </summary>
+<p>presionaremos repetidamente siguiendo alguno de los siguientes patrones: 
+(no importa el patron ni el orden de pulsaciones, sino la frecuencia. ) </p>
+
+<details>
+<summary>Mostrar Patrones</summary>
+<img src="imagenes/patron1.jpeg" alt="patron 1"> 
+<img src="imagenes/patron2.jpeg" alt="patron 2">
+</details>
+</details>
+</div>
+
+
+<div>
+<details>
+<summary id="calibrarDisplay"> Calibracion de display </summary> 
+
+<p> Dado que se intuye que el tactil de un ebox no responde adecuadamente es importante:</p>
+
+<ol>
+    <li>Abrimos la maquina (<a href=""> Como abrirla</a>)</li>
+    <li> Por detras del display (del ebox) hay un cable, siguelo hasta el box y desconectalo. </li>
+    <li> En la bodega podrias encontrar un reemplazo, que probablemente este calibrado. Buscalo y conectalo.</li>
+    <li> <a href="#menuEbox"> Entra al menu del ebox </a> </li>
+    <li> veras un rectangulo naranja que dice "Display" presionalo. </li>
+    <li> una vez dentro veras un icono redondo con las asquinas de un cuadro y un punto dentro. presionalo.</li>
+    <li> Ahora reconecta el display anterior.</li>
+    <li> Sigue las instrucciones del Ebox, y sal del menu.</li>
+</ol>
+</details>
+</div>
+
+
+
+<div>
+<details>
+<summary id="clonar"> Clonando el disco </summary>
+
+<p> *Los Ebox nano no se clonan* </p>
+
+<ol>
+<li> Necesitaremos un teclado y tambien una usb booteable con el wigos. \n
+[puedes encontrar esta usb en gerencia, con la leyenda] </li>
+ 
+<li> apagamos el ebox y una vez conectado el usb y  el teclado y encendemos. </li> 
+
+<li> prendemos el equipo y dejamos a que cargue. </li>
+
+<li> nos pedira confirmacion. aceptamos y dejamos que instale. para proceder con la siguiente parte: post instalacion </li>
+</ol>
+</details>
+</div>
+
+
+
+<div>
+<details>
+<summary id="configurarEbox"> Post instalacion </summary>
+<p> Procederemos a configurar la instalacion. </p> 
+
+<ol>
+<li> <a href="#menuEbox"> Accedemos al menu del Ebox </a></li>
+<li> una vez dentro del menu pulsaremos la opcion 1) "Configuracion". </li>
+<li> seleccionamos la opcion 2) "lector de tarjetas". \n si el lector tiene un led enfrente es Magtek, si no lo tiene es XST. selecciona la opcion correspondiente </li>
+<li> luego presionamos "Esc" para volver y configurar el display </li>
+<li> vamos a la opcion 1) "Display" navegamos hasta llegar la opcion "In touch web (5.5)" la seleccionamos con esc.  (si esta opcion de display no se lista, eligamos algun in touch web, reiniciamos y deberia aparecer) </li>
+<li> Para finalizar basta con la opcion 4) reiniciar, luego la opcion 2) reiniciar ebox. </li></ol>
+
+<p> Al reiniciar ya quedara configurado y listo nuestro Ebox. </p>
+</details>
+</div>
+
+<div> 
+<details>
+<summary id="reiniciarEbox"> Reiniciar Ebox </summary>
+<p> todos los ebox tienen un boton de encendido y apagado, presionemoslo, esperemos a que se apague, contemos 10 y volvamos a prender. para acceder al Ebox necesitas <a href=""> Abrir la maquina </a> </p>
+</details>
+</div> 
+
+<div>
+<h2 id="tarjetero"> Tarjetero </h2>  
+
+<details><summary>Lect. Tarjetero Error.</summary> 
+
+<ul>
+<li>Desconectemos y renoctamos los usb del tarjetero. (desde el e box o desde el tarjetero.) </li>
+<li> <a href=""> Cambiemos el tarjetero </a> </li>
+</ul>
+
+<h3> Cambio de tarjetero </h3> 
+<!-- Consultemos si es valido cambiar de modelo de tarjetero en caso extremo -->
+<p> En la bodega  podras encontrar una caja con la leyenda "Tarjeteros" para buscar uno del mismo modelo y reemplezarlo. revisa la seccion acorde al modelo de <a href=""> Maquina de juego </a> </p>
+</details>
+
+
+
+<details>
+<summary id="tarjetaOcupada"> Tarjeta bloqueada / ocupada </summary>
+
+<p> verifiquemos lo siguiente: </p>
+
+<ol>
+<li> Encontrar la ultima maquina jugada por el cliente.</li>
+
+<li> Revisar si no hay jugadas gratis que reclamar (Si es asi se termina la jugada)</li>
+
+<li> Si gano un premio mayor y la maquina se bloquea, necesitaras liberarla con la llave dorada.</li>
+
+<li> Si el problema persiste se procede reiniciando la maquina. </li>
+
+<li> Si tras probar estos pasos no se soluciona se puede intentar un pago manual. No obstante es bueno repetir los pasos esperando se libere. </li>
+</ul>
+</details>
+</div>
+
+
+
+</section>
+
+
+
+<section> 
+
+<h2> Tupper </h2>
+<details>
+<summary id="toper"> Apagado / Congelado </summary>
+<div>
+<h3> Apagado / Congelado </h3>
+<p> Dentro del gabinete de la terminal encontraremos el tvbox. hay que desconectarlo de la energia, luego el hdmi. (si no hay un ebox necesitamos reiniciar la maquina unos 10 segundos)
+Espera 5 segundos para reconectar energia y luego el hdmi.  
+
+- Si entro al menu necesitamos el control para acceder al video. 
+
+</p>
+</div>
+</details>
+</section>
+
+<section> 
+
+<div>
+<h2 id="scaner"> Scanners </h2>
+
+<details>
+<summary>Calibración</summary>
+<h5> tip: </h5>
+<p> presiona la tecla windows para ver si te deja abrir el menu, si es asi te puedes saltar los primeros 3 pasos </p>
+<ol> 
+<li>Presionamos [ctrl + shift + esc] para abrir el admin. de tareas.</li>
+<li> presionamos [alt] y luego [enter] para abrir la opcion archivo. </li>
+<li>se desplegaran mas opciones y elegimos "nueva tarea", escribimos "explorer.exe" y damos [enter] esto abrira el menu de windows. </li>
+<li>Buscamos el programa "Calibration wizard" y lo abrimos, nos pedira una hoja de calibracion, que se puede encontrar en la bodega, puedes <a href=""> imprimir una</a> o usar una hoja blanca. en casos de urgencia. </li>
+<li> Presionamos siguiente y seguimos el programa que pedira insertar la hoja y presionar "calibrar ahora"</li>
+</ol> 
+</details>
+</div>
+
+</section> 
+</body>
+</html>
